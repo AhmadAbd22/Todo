@@ -22,3 +22,29 @@ header {
     padding: 10px 0;
     text-align: center;
 }
+
+.todo-input {
+    width: 80%;
+    padding: 10px;
+    margin: 20px auto;
+    display: flex;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.todo-input input {
+    flex: 1;
+    border: none;
+    padding: 10px;
+    border-radius: 4px 0 0 4px;
+    font-size: 16px;
+}
+
+.todo-input button {
+    background-color: #d19018;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+}
