@@ -3,24 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>To-Do App</title>
+    <title>My Tasks - TODO App</title>
     <link rel="stylesheet" href="style.css" type="text/css">
     <script defer src="app.js"></script>
 </head>
 <body>
-    <header>
-        <h1>To-Do App</h1>
-    </header>
-    <main>
-        <section class="todo-container">
-            <div class="todo-input">
-                <input type="text" id="todo-input" placeholder="Add a new task...">
-                <button id="add-button">Add</button>
-            </div>
-            <ul id="todo-list"></ul>
-            </div>
-        </section>
+    <div class="container">
+        <!-- Header Section -->
+        <header class="header">
+            <div class="header-content">
+                <h1 class="app-title">
+                    <svg class="logo-icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M9 11l3 3L22 4"></path>
+                        <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path>
+            <link rel="stylesheet" href="style.css" type="text/css">
+            <script defer src="app.js"></script>
+                </h1>
+                <p class="app-subtitle">Organize your day, achieve your goals</p>
+            <div class="app-wrap">
+                <header class="app-header">
+                    <div class="brand">
+                        <div class="brand-badge">✓</div>
+                        <div>
+                            <h1 class="brand-title">My Tasks</h1>
+                            <p class="brand-sub">A minimal, focused todo experience</p>
+                        </div>
+                    </div>
+                </header>
 
-    </main>
-</body>
-</html>
+                <main class="app-main">
+                    <section class="card new-task-card">
+                        <form id="new-task-form" class="new-task-form" onsubmit="return false;">
+                            <input id="todo-input" class="new-task-input" type="text" placeholder="What do you want to accomplish today?" autocomplete="off" />
+                            <button id="add-button" class="btn btn-primary" aria-label="Add task">Add</button>
+                        </form>
+                        <div class="quick-hint">Tip: Press Enter to add</div>
+                    </section>
+
+                    <section class="card list-card">
+                        <div class="list-header">
+                            <div class="filters">
+                                <button class="filter active" data-filter="all">All <span id="all-count" class="count">0</span></button>
+                                <button class="filter" data-filter="active">Active <span id="active-count" class="count">0</span></button>
+                                <button class="filter" data-filter="completed">Completed <span id="completed-count" class="count">0</span></button>
+                            </div>
+                            <div class="list-actions">
+                                <button id="clear-completed" class="btn btn-ghost">Clear Completed</button>
+                            </div>
+                        </div>
+
+                        <ul id="todo-list" class="todo-list" aria-live="polite">
+                            <!-- JS will inject tasks here -->
+                        </ul>
+
+                        <div id="empty-state" class="empty-state">
+                            <svg width="72" height="72" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+                                <path d="M9 11l3 3L22 4"></path>
+                                <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path>
+                            </svg>
+                            <h3>No tasks yet</h3>
+                            <p>Add something above to get started.</p>
+                        </div>
+                    </section>
+                </main>
+            </div>
