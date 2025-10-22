@@ -3,6 +3,9 @@ const todoList = document.getElementById('todo-list');
 const addButton = document.getElementById('add-button');
 const taskCount = document.getElementById('all-count');
 
+const activeCount = 0;
+const completedCount = 0;
+
 addButton.addEventListener('click', () => {
     
     const todoText = todoInput.value.trim();
@@ -12,6 +15,7 @@ addButton.addEventListener('click', () => {
         listItem.textContent = todoText;
         todoList.appendChild(listItem);
         todoInput.value = '';
-        taskCount.textContent = `${todoList.children.length}`;
+        const actualTaskCount = todoList.querySelectorAll('li:not(#task-template)').length;
+        taskCount.textContent = actualTaskCount;
     }
 });
