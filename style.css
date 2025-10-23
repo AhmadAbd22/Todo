@@ -107,7 +107,27 @@ body{
 .todo-text{font-size:15px;color:#111827;transition:all 0.2s ease}
 .todo-item.completed .todo-text{color:var(--muted);text-decoration:line-through}
 
-.todo-actions{display:flex;gap:8px}
+.todo-actions{display:flex;gap:8px;align-items:center}
+.status-buttons{display:flex;gap:4px;margin-right:8px}
+.status-btn{
+    font-size:12px;
+    padding:4px 8px;
+    border-radius:6px;
+    background:#f3f4f6;
+    color:var(--muted);
+    border:1px solid transparent;
+    transition:all 0.2s ease;
+}
+.status-btn:hover{background:#e5e7eb}
+.status-btn.current{
+    background:var(--accent);
+    color:white;
+    border-color:var(--accent-700);
+}
+.active-btn.current{
+    background:#16a34a;
+    border-color:#15803d;
+}
 .icon-btn{background:transparent;border:none;padding:6px;border-radius:8px;cursor:pointer;color:var(--muted)}
 .icon-btn:hover{background:rgba(15,23,42,0.04)}
 
